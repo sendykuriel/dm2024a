@@ -58,6 +58,10 @@ dapply[, Predicted := as.numeric(prob_baja2 > 1 / 40)]
 dir.create("./exp/")
 dir.create("./exp/KA2001")
 
+pdf(paste0('~/itba/mineria/outArbol', file, '.pdf')) 
+prp(modelo, extra = 101, digits = -5, branch = 1, type = 4, varlen = 0, faclen = 0 ) 
+dev.off()
+
 # solo los campos para Kaggle
 fwrite(dapply[, list(numero_de_cliente, Predicted)],
         file = "./exp/KA2001/K101_001.csv",
