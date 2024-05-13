@@ -111,7 +111,10 @@ archivo_salida <- "./exp/HT2020/gridsearch.txt"
 # genero la data.table donde van los resultados del Grid Search
 tb_grid_search <- data.table( max_depth = integer(),
                               min_split = integer(),
-                              ganancia_promedio = numeric() )
+                              cp = numeric(),
+                              minbucket = integer(),
+                              ganancia_promedio = numeric() 
+                              )
 
 
 # itero por los loops anidados para cada hiperparametro
@@ -137,7 +140,7 @@ for (vmax_depth in c(4, 6, 8, 10, 12, 14)) {
     # agrego a la tabla
     tb_grid_search <- rbindlist( 
       list( tb_grid_search, 
-            list( vmax_depth, vmin_split, ganancia_promedio) ) )
+            list( vmax_depth, vmin_split,cp,minbucket, ganancia_promedio) ) )
 
         }}}
 
