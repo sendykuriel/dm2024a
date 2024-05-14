@@ -21,10 +21,10 @@ modelo <- rpart(
         formula = "clase_ternaria ~ .",
         data = dtrain, # los datos donde voy a entrenar
         xval = 0,
-        cp = -0.3, # esto significa no limitar la complejidad de los splits
-        minsplit = 200, # minima cantidad de registros para que se haga el split
-        minbucket = 1200, # tamaño minimo de una hoja
-        maxdepth = 5 # profundidad maxima del arbol
+        cp = -0.5, # esto significa no limitar la complejidad de los splits
+        minsplit = 50, # minima cantidad de registros para que se haga el split
+        minbucket = 400, # tamaño minimo de una hoja
+        maxdepth = 12
 )
 
 
@@ -55,10 +55,10 @@ dapply[, Predicted := as.numeric(prob_baja2 > 1 / 40)]
 
 # genero el archivo para Kaggle
 # primero creo la carpeta donde va el experimento
-dir.create("./exp/")
-dir.create("./exp/KA2001")
+# dir.create("./exp/")
+# dir.create("./exp/KA2001")
 
-pdf(paste0('~/itba/mineria/outArbol', file, '.pdf')) 
+# pdf(paste0('~/itba/mineria/outArbol', file, '.pdf')) 
 prp(modelo, extra = 101, digits = -5, branch = 1, type = 4, varlen = 0, faclen = 0 ) 
 dev.off()
 
