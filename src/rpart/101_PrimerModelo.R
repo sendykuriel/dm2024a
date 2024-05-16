@@ -21,10 +21,10 @@ modelo <- rpart(
         formula = "clase_ternaria ~ .",
         data = dtrain, # los datos donde voy a entrenar
         xval = 0,
-        cp = -0.5, # esto significa no limitar la complejidad de los splits
-        minsplit = 50, # minima cantidad de registros para que se haga el split
-        minbucket = 400, # tamaño minimo de una hoja
-        maxdepth = 12
+        cp = -0.4405748441, # esto significa no limitar la complejidad de los splits
+        minsplit = 7999, # minima cantidad de registros para que se haga el split
+        minbucket = 280, # tamaño minimo de una hoja
+        maxdepth = 20
 )
 
 
