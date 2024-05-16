@@ -36,8 +36,8 @@ PARAM$num_trees_max <- 500
 setwd("~/buckets/b1/") # Establezco el Working Directory
 
 #cargo MI semilla, que esta en MI bucket
-tabla_semillas <- fread( "./datasets//mis_semillas.txt" )
-ksemilla_azar <- tabla_semillas[ 1, semilla ]  # 1 es mi primer semilla
+# tabla_semillas <- fread( "./datasets//mis_semillas.txt" )
+ksemilla_azar <- (445679)  # 1 es mi primer semilla  # 1 es mi primer semilla
 
 # cargo los datos
 dataset <- fread("~/datasets/dataset_pequeno.csv")
